@@ -1,0 +1,18 @@
+<h1>Pronósticos para {{city.name}}</h1>
+
+<div class="alert alert-warning" ng-show="forecast == null">
+    <p>No hay pronósticos para esta ciudad...</p>
+</div>
+
+<table class="table table-bordered" ng-show="forecast != null">
+    <tr>
+        <th>Fecha</th>
+        <th>Pronóstico</th>
+        <th></th>
+    </tr>
+    <tr ng-repeat="item in forecast">
+        <td>{{item.date|date:'medium'}}</td>
+        <td>{{item.forecast}}</td>
+        <td><a ng-click="remove(item.id)" class="trash"><span class="glyphicon glyphicon-trash"></span></td>
+    </tr>
+</table>

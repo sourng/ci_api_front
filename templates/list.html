@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="panel-body">
+        <div class="alert alert-warning" ng-hide="cities">
+            <p>No hay ciudades en la base de datos...</p>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="city in cities">
+                <a href="#/edit/{{city.id}}">{{city.name}}</a>
+
+                <div class="pull-right action-buttons">
+                    <a href="#/view/{{city.id}}"><span class="glyphicon glyphicon-calendar"></span> </a>
+                    <a ng-click="remove(city.id)" class="trash"><span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

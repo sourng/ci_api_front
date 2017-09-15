@@ -1,0 +1,13 @@
+<h1>{{$parent.settings.pageTitle}}</h1>
+
+<p ng-show="$parent.settings.success" class="alert alert-success">{{$parent.settings.success}}</p>
+
+<div class="required-field-block">
+    <input type="text" placeholder="Nombre de la ciudad..." ng-model="city.name" class="form-control">
+
+    <div class="required-icon">
+        <div class="text">*</div>
+    </div>
+</div>
+
+<button class="btn btn-primary" ng-click="submit($parent.city)">{{$parent.settings.action}}</button>

@@ -1,0 +1,27 @@
+<h1>{{$parent.settings.pageTitle}}</h1>
+
+<p ng-show="$parent.settings.success" class="alert alert-success">{{$parent.settings.success}}</p>
+
+<div class="required-field-block">
+
+    <select ng-model="forecast.forecast" class="form-control">
+        <option value="">Selecciona un valor</option>
+        <option value="Soleado">Soleado</option>
+        <option value="Nublado">Nublado</option>
+        <option value="Lluvia">Lluvia</option>
+        <option value="Tormenta">Tormenta</option>
+    </select>
+</div>
+
+<div class="required-field-block">
+    <select ng-model="forecast.id_city" class="form-control">
+        <option value="">Selecciona un ciudad</option>
+        <option ng-repeat="city in cities" value="{{city.id}}">{{city.name}}</option>
+    </select>
+</div>
+
+<div class="required-field-block">
+    <input type="date" ng-model="forecast.date" />
+</div>
+
+<button class="btn btn-primary" ng-click="submit($parent.forecast)">{{$parent.settings.action}}</button>
